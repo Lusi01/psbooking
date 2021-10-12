@@ -116,7 +116,7 @@ class CityUpdateView(SuccessMessageMixin, UpdateView):
         return str_url
 
 
-class CityCreateView(SuccessMessageMixin, CreateView):
+class CityCreateView(SuccessMessageMixin, CreateView):  #
     template_name = 'hotels/city_create.html'
     form_class = CityCreationForm
     success_message = 'Город успешно добавлен.'

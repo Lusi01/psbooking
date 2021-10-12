@@ -86,7 +86,7 @@ class ReviewView(MyPermissionRequiredMixin, ListView):
         if user.profile:
             if user.profile.role:
                 if user.profile.role.name == 'Пользователь':
-                    queryset = queryset.select_related('room__hotel').filter(user=user)
+                    queryset = queryset.filter(user=user)
             else:
                 queryset = None
 

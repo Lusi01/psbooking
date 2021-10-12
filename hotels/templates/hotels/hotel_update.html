@@ -21,7 +21,8 @@
                         {% for field in form %}
                             <div class="mb-3 text-start">
 
-                                {% if field.name == "city" %}
+                            {% if field.name == "city" and hotel  %}
+{#                                {% if field.name == "city" %}#}
                                     <a class="open_modal_update"
                                        data-bs-toggle="modal"
                                        data-bs-target="#updateModal"
@@ -48,7 +49,7 @@
                                         <img src="{% static 'images/admin/icon-deletelink.svg' %}" alt="Удалить">
                                     </a>
 
-                                {% endif %}
+                            {% endif %}
 
                                 {% if field.name == "logo" %}
                                     <div style="display: grid">

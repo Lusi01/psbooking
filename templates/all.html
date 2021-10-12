@@ -9,20 +9,20 @@
     {% include "snippets/_header.html" %}
 
     <!-- BreadCrumb Starts -->
-    <section class="breadcrumb-main pb-2" style="background-image: url({% static 'images/bg/bg8.jpg' %})">
+    <section class="breadcrumb-main pb-2"
+             style="background-image: url({% static 'images/bg/bg8.jpg' %})">
         <div class="dot-overlay"></div>
     </section>
     <!-- BreadCrumb Ends -->
 
-
     <!-- Модальное окно -->
-    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal fade" id="createModal"
+         tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 {% include './hotels/city_create.html' %}
             </div>
         </div>
-
     </div>
 
     <div class="modal fade" id="updateModal"

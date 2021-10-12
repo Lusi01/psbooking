@@ -5,7 +5,9 @@
 
 <form action="{% url 'hotels:city_create' %}" role="form" method="post">
     {% csrf_token %}
+
     <div class="modal-body">
+
         {% for field in city %}
 
             <div class="form-group{% if field.errors %} invalid{% endif %}">

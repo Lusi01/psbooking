@@ -35,7 +35,7 @@ $(document).ready(function () {
     var $myForm
     var $thisURL
     var $formData
-    // модальное окно
+    // форма создания комнаты модальное окно
     $(document).on("click", ".but-ajax-1", function () {
         $myForm = $('.form-ajax-1')
         actForm($myForm);
