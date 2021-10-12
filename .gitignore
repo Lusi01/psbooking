@@ -25,7 +25,7 @@ copyes
 # psbooking/staticfiles/
 ## staticfiles
 ## static
-## assets
+assets
 
 ### Django.Python Stack ###
 # Byte-compiled / optimized / DLL files
