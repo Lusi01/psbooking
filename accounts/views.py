@@ -84,10 +84,15 @@ class ReviewView(MyPermissionRequiredMixin, ListView):
 
         user = self.request.user
         if user.profile:
-            if user.profile.role.name == 'Пользователь':
-                queryset = queryset.filter(user=user)
+            if user.profile.role:
+                if user.profile.role.name == 'Пользователь':
+                    queryset = queryset.select_related('room__hotel').filter(user=user)
+            else:
+                queryset = None
+
         else:
-            pass
+            queryset = None
+
         return queryset
 
 
@@ -114,10 +119,14 @@ class BookingView(MyPermissionRequiredMixin, ListView):
         user = self.request.user
 
         if user.profile:
-            if user.profile.role.name == 'Пользователь':
-                queryset = queryset.select_related('room__hotel').filter(user=user)
+            if user.profile.role:
+                if user.profile.role.name == 'Пользователь':
+                    queryset = queryset.select_related('room__hotel').filter(user=user)
+            else:
+                queryset = None
+
         else:
-            pass
+            queryset = None
 
         return queryset
 
