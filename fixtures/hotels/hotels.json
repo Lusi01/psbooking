@@ -1,0 +1,821 @@
+[
+  {
+    "model": "hotels.country",
+    "pk": 1,
+    "fields": {
+      "countryname": "������",
+      "logo": "destination/list/destination5.jpg"
+    }
+  },
+  {
+    "model": "hotels.country",
+    "pk": 2,
+    "fields": {
+      "countryname": "������",
+      "logo": "destination/list/destination10.jpg"
+    }
+  },
+  {
+    "model": "hotels.country",
+    "pk": 3,
+    "fields": {
+      "countryname": "��������������",
+      "logo": "destination/list/destination4.jpg"
+    }
+  },
+  {
+    "model": "hotels.country",
+    "pk": 4,
+    "fields": {
+      "countryname": "����������",
+      "logo": "destination/list/destination3.jpg"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 3,
+    "fields": {
+      "country": 3,
+      "cityname": "������"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 4,
+    "fields": {
+      "country": 4,
+      "cityname": "��������"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 17,
+    "fields": {
+      "country": 2,
+      "cityname": "�����-���������"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 25,
+    "fields": {
+      "country": 2,
+      "cityname": "������"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 37,
+    "fields": {
+      "country": 2,
+      "cityname": "�������"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 41,
+    "fields": {
+      "country": 2,
+      "cityname": "�������"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 43,
+    "fields": {
+      "country": 1,
+      "cityname": "�������"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 48,
+    "fields": {
+      "country": 2,
+      "cityname": "���������"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 49,
+    "fields": {
+      "country": 1,
+      "cityname": "���"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 50,
+    "fields": {
+      "country": 2,
+      "cityname": "������"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 1,
+    "fields": {
+      "title": "��������"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 2,
+    "fields": {
+      "title": "���������� Wi-Fi"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 3,
+    "fields": {
+      "title": "�������� ��/�� ���������"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 4,
+    "fields": {
+      "title": "�������� ������"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 5,
+    "fields": {
+      "title": "����� � ���������"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 6,
+    "fields": {
+      "title": "������ ��� ���������"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 7,
+    "fields": {
+      "title": "���"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 8,
+    "fields": {
+      "title": "����������� ������-�����"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 9,
+    "fields": {
+      "title": "���������/������ �� ���� �������"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 10,
+    "fields": {
+      "title": "�������������� ������ �����������"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 11,
+    "fields": {
+      "title": "�������� ��� � �������� � �����"
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 1,
+    "fields": {
+      "city": 4,
+      "country": 4,
+      "title": "Be Poet Baixa Hotel",
+      "description": "����� Be Poet Baixa ������ ���������� � ������������ ������ ���������, ����� � 600 ������ �� ������ ����� � � 300 ������ �� ������� �����. ����� ��������� ����� � 140 ������ �� ���������� �����-����� � � 450 ������ �� �������� ������� � ���� ����.",
+      "category": 3,
+      "is_repair": false,
+      "logo": "hotels/list/s1200_4ZV5Y8n.jpg",
+      "service": [
+        1,
+        2,
+        3,
+        11
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 2,
+    "fields": {
+      "city": 49,
+      "country": 1,
+      "title": "Horti 14 Borgo Trastevere",
+      "description": "����� Horti 14 Borgo Trastevere ���������� � ������ ����, � 10 ������� ������ �� ������ ����������� ������ ����������. �� ���������� 4-����������� ����� ������ ��� � �������� �������� � ���.\r\n\r\n��� ��������� ������������� ������ ����� Horti 14 Borgo Trastevere ��������� � ����������� ����� � �������� �������������, ����-����� � ����������� � ������� ������� � �������� ���� Sky. � ����� ������� ���������� Wi-Fi. �� ���� ������� ��������������� ������� � ������.",
+      "category": 4,
+      "is_repair": true,
+      "logo": "hotels/list/s1200_8CtODgx.jpg",
+      "service": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 3,
+    "fields": {
+      "city": 50,
+      "country": 2,
+      "title": "�������� ��� �����������",
+      "description": "����� Radisson Blu Olympiyskiy � ����������� ����� �� ������� ���������� � ����� ����� � ������ ������, ����� � ���������� ����.\r\n\r\n� ������� ������ ����� Radisson Blu ����������� ������ � ����� � ���������� ����� �� ��������� ������ ������. � ������� ��������������� �������������� ��� ���/����, � ��� ����� ��������������� ���������������� Wi-Fi.",
+      "category": 5,
+      "is_repair": true,
+      "logo": "hotels/list/s1200_4Al9ffW.jpg",
+      "service": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 4,
+    "fields": {
+      "city": 3,
+      "country": 3,
+      "title": "Camden Enterprise Hotel",
+      "description": "����� Camden Enterprise ���������� � ������������� ������, ����������� � 1865 ����, � ���������� ������ ������, ����� �� �������� ����� Chalk Farm � � 10 ������� ������ �� ����� ������ � ������ ��������. � ������� ������ ���.\r\n\r\n� ����� ������� ������� �������������� ���������, ������������� ��������� ������, �������������� ��� ���/����, � ����� ����������� ������ ������� � ����� � ����������� ��������-�������������� ����������������. � ��������� ������� ���� ���������� ��� ����������� ���� � ����� �� �����. �� ���� ���������� ����� Camden Enterprise �������� ���������� Wi-Fi.",
+      "category": 4,
+      "is_repair": false,
+      "logo": "hotels/list/s1200_ISLbVSy.jpg",
+      "service": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        11
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 13,
+    "fields": {
+      "city": 17,
+      "country": 2,
+      "title": "��� ���� �������",
+      "description": "<p>����� ���� ��������� ����� ���������� ��������� � ��������� ������. <br>\r\n� ������� ������ ��������� ������ � ���������� WiFi.<br></p>\r\n������������ ����� <span class=\"text-primary\">��� ���������� 11� </span><br>�������� �������� ��� ������, �������� ��������� �����-���������. �� ����������� ������� - ��������� ����� �� ����������.\r\n��� ������� ����� ������ �����-��������� ����� ����� ������ �������� ����������� �������.\r\n����� �������� �������� ������������ � ��� ������� ���������� � ���� ������ ��� ������� ������ �� <b>8,8</b>.",
+      "category": 3,
+      "is_repair": true,
+      "logo": "hotels/list/185999851.jpg",
+      "service": [
+        2,
+        3,
+        5,
+        6,
+        10
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 17,
+    "fields": {
+      "city": 25,
+      "country": 2,
+      "title": "Hotel Times",
+      "description": "����� Times ���������� � ������, � 18 �� �� �������� ������� �����.<br> � ������� ������ ������ � �������������. � ������ ������ ���������� <b>����������� ������ �������</b> � ���������� ��������� � ������� ������� � ������������ ��������.<br>� ����� ������� �������������� ������ ����������� � ���������� Wi-Fi.",
+      "category": 2,
+      "is_repair": false,
+      "logo": "hotels/list/162174167.jpg",
+      "service": [
+        1,
+        2,
+        4,
+        6,
+        10
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 18,
+    "fields": {
+      "city": 43,
+      "country": 1,
+      "title": "Napolart",
+      "description": "����� ���� <b>�������� � �������</b> Napolart ���������� � ������������ ������ �������, ����� � 700 � �� ������� <b>������-����-���������</b> � � 140 � �� ������� ����� <b>Municipio</b>. ������ ������� �� ������ � ����� �� �����. �� ���� ���������� ��������� ���������� Wi-Fi.",
+      "category": 5,
+      "is_repair": false,
+      "logo": "hotels/list/29395854.jpg",
+      "service": [
+        1,
+        2,
+        3,
+        7,
+        10,
+        11
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 20,
+    "fields": {
+      "city": 48,
+      "country": 2,
+      "title": "�����",
+      "description": "����� ���������� � ������ ������. ���������� ��� �� �����. �������������� ������������ �������. ��������� �� ������ � ������������.",
+      "category": 3,
+      "is_repair": false,
+      "logo": "",
+      "service": [
+        1,
+        2,
+        6,
+        10
+      ]
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 1,
+    "fields": {
+      "hotel": 1,
+      "price": 1500.0,
+      "category": "�������",
+      "description": "����������� ����������� ����� � 1 ��������",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 2,
+    "fields": {
+      "hotel": 1,
+      "price": 2500.0,
+      "category": "��������",
+      "description": "���������� ����������� ����� � 1 �������� ��� 2 ���������� ���������",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 3,
+    "fields": {
+      "hotel": 2,
+      "price": 2500.0,
+      "category": "��������",
+      "description": "���������� ����������� ����� � 1 �������� ��� 2 ���������� ��������� � ����� �� ���",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 4,
+    "fields": {
+      "hotel": 2,
+      "price": 3000.0,
+      "category": "����",
+      "description": "����������� ����� ������ � 1 �������� ��� 2 ���������� ���������, ��� �� ���",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 5,
+    "fields": {
+      "hotel": 3,
+      "price": 3500.0,
+      "category": "����",
+      "description": "2 ������������ �������  ��� 1 ����� ������� ����������� �������",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 6,
+    "fields": {
+      "hotel": 3,
+      "price": 1500.0,
+      "category": "������",
+      "description": "����������� ����� � ����� �� �����",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 7,
+    "fields": {
+      "hotel": 3,
+      "price": 2500.0,
+      "category": "��������",
+      "description": "����������� ����� ������� � 2 ���������� ��������� � ����� �� �����\r\n ������� ����\r\n2 ������������ �������",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 8,
+    "fields": {
+      "hotel": 4,
+      "price": 2000.0,
+      "category": "��������",
+      "description": "!!!!����������� ����� ������ � 1 �������� ��� 2 ���������� ���������\r\n1 ������� ����������� �������  ��� 2 ������������ �������",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 9,
+    "fields": {
+      "hotel": 4,
+      "price": 1500.0,
+      "category": "������",
+      "description": "���������� �����-������\r\n1 ����������� �������  � 1 �����-�������",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 10,
+    "fields": {
+      "hotel": 4,
+      "price": 1000.0,
+      "category": "������",
+      "description": "���������� ����������� ����� � 1 ��������\r\n1 ������� ����������� �������",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 19,
+    "fields": {
+      "hotel": 13,
+      "price": 2200.0,
+      "category": "�������",
+      "description": "������� ����� � �����������, ������������� � ���������� ������. � ����������� ������ ������� ������ ���� ���. +++",
+      "logo": "rooms/list/185998210.jpg",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 96,
+    "fields": {
+      "hotel": 13,
+      "price": 1800.8,
+      "category": "��������",
+      "description": "������� ����� � �����������, ������������� � ���������� ������. � ����������� ������ ������� ������ ���� ���.\r\n\r\n��� ����� ���������� �����.",
+      "logo": "rooms/list/6528381.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 97,
+    "fields": {
+      "hotel": 13,
+      "price": 1350.55,
+      "category": "������",
+      "description": "������� ����� � ����������� � �������������.",
+      "logo": "rooms/list/16977990.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 107,
+    "fields": {
+      "hotel": 17,
+      "price": 1440.0,
+      "category": "�������",
+      "description": "1 ������� ����������� ������� \r\n����������� ����� � 1 ��������, ������������� � ������������� ��������.",
+      "logo": "rooms/list/162174354.jpg",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 108,
+    "fields": {
+      "hotel": 17,
+      "price": 1500.56,
+      "category": "����",
+      "description": "2 ������-������� \r\n���� � ������������� � ������������� ��������.",
+      "logo": "rooms/list/162678160.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 109,
+    "fields": {
+      "hotel": 18,
+      "price": 8201.0,
+      "category": "��������",
+      "description": "1 ������� ����������� ������� \r\n����������� ����� � 1 ��������, �������������, ����-����� � ����������� ������������.",
+      "logo": "rooms/list/86870318.jpg",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 110,
+    "fields": {
+      "hotel": 18,
+      "price": 8978.0,
+      "category": "����",
+      "description": "����� � �������� � ����� �� �����, �������������, � ����������� �������, ����������� ������������ � ����-�����. � ����������� ������ ������� ����� ������������ ����� � ����������� ��������-�������������� ����������������.",
+      "logo": "rooms/list/29395837.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 111,
+    "fields": {
+      "hotel": 18,
+      "price": 11963.0,
+      "category": "����",
+      "description": "1 ����� ������� ����������� �������  � 1 �����-������� \r\n����� � �������� � ����� �� �����, �������������, ����������� �������, ����������� ������������, �������-�������� � ����-�����. � ����������� ������ ������� ����� ������������ ����� � ����������� ��������-�������������� ����������������.",
+      "logo": "rooms/list/57938547.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 112,
+    "fields": {
+      "hotel": 1,
+      "price": 1777.0,
+      "category": "������",
+      "description": "����������� ����� � ����� �� �����",
+      "logo": "rooms/list/room3_1qEYmI4.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 113,
+    "fields": {
+      "hotel": 20,
+      "price": 2000.0,
+      "category": "����",
+      "description": "1 ����� ������� ����������� ������� � 1 �����-������� ����� � �������� � ����� �� �����, �������������, ����������� �������, ����������� ������������, �������-�������� � ����-�����. � ����������� ������ ������� ����� ������������ ����� � ����������� ��������-�������������� ����������������.",
+      "logo": "rooms/list/list2.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 114,
+    "fields": {
+      "hotel": 20,
+      "price": 111.0,
+      "category": "�������",
+      "description": "1 ������� ����������� ������� ����������� ����� � 1 ��������, ������������� � ������������� ��������.",
+      "logo": "rooms/list/162677768.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 115,
+    "fields": {
+      "hotel": 20,
+      "price": 333.0,
+      "category": "�������",
+      "description": "������� ����� � �����������, ������������� � ���������� ������. � ����������� ������ ������� ������ ���� ���.",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 116,
+    "fields": {
+      "hotel": 20,
+      "price": 1333.0,
+      "category": "�������",
+      "description": "����������� ����������� ����� � 1 ��������",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 117,
+    "fields": {
+      "hotel": 20,
+      "price": 1555.0,
+      "category": "��������",
+      "description": "���������� ����������� ����� � 1 �������� ��� 2 ���������� ��������� � ����� �� ���",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 118,
+    "fields": {
+      "hotel": 20,
+      "price": 2444.0,
+      "category": "����",
+      "description": "2 ������������ ������� ��� 1 ����� ������� ����������� �������",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 4,
+    "fields": {
+      "user": 1,
+      "hotel": 2,
+      "rate": 4,
+      "text": "��� ��������, ������ � ������.",
+      "created": "2021-08-14",
+      "updated": "2021-10-11T12:39:30.786Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 6,
+    "fields": {
+      "user": 1,
+      "hotel": 13,
+      "rate": 4,
+      "text": "��� ���� ������.",
+      "created": "2021-09-08",
+      "updated": "2021-10-11T12:39:06.710Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 7,
+    "fields": {
+      "user": 1,
+      "hotel": 2,
+      "rate": 1,
+      "text": "�������������� ������������.",
+      "created": "2021-09-21",
+      "updated": "2021-10-11T12:38:46.159Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 8,
+    "fields": {
+      "user": 1,
+      "hotel": 1,
+      "rate": 5,
+      "text": "��� ��������.",
+      "created": "2021-09-24",
+      "updated": "2021-10-11T12:38:24.675Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 9,
+    "fields": {
+      "user": 4,
+      "hotel": 18,
+      "rate": 3,
+      "text": "����� ������ � ��������.",
+      "created": "2021-10-03",
+      "updated": "2021-10-11T12:38:06.172Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 11,
+    "fields": {
+      "user": 2,
+      "hotel": 13,
+      "rate": 4,
+      "text": "������ �������������, �� �������.",
+      "created": "2021-10-06",
+      "updated": "2021-10-11T12:37:41.755Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 12,
+    "fields": {
+      "user": 2,
+      "hotel": 4,
+      "rate": 5,
+      "text": "����� ��� �����������.",
+      "created": "2021-10-06",
+      "updated": "2021-10-11T12:37:03.159Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 13,
+    "fields": {
+      "user": 1,
+      "hotel": 17,
+      "rate": 4,
+      "text": "�������� �����!",
+      "created": "2021-10-07",
+      "updated": "2021-10-06T22:10:54.243Z"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "room": 4,
+      "date_start": "2021-08-04",
+      "date_end": "2021-08-04"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "room": 3,
+      "date_start": "2021-08-04",
+      "date_end": "2021-09-04"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 35,
+    "fields": {
+      "user": 1,
+      "room": 109,
+      "date_start": "2021-09-01",
+      "date_end": "2021-10-01"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 37,
+    "fields": {
+      "user": 2,
+      "room": 19,
+      "date_start": "2021-10-03",
+      "date_end": "2021-10-31"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 38,
+    "fields": {
+      "user": 2,
+      "room": 10,
+      "date_start": "2021-10-27",
+      "date_end": "2021-10-31"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 39,
+    "fields": {
+      "user": 2,
+      "room": 9,
+      "date_start": "2021-10-27",
+      "date_end": "2021-10-31"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 41,
+    "fields": {
+      "user": 1,
+      "room": 107,
+      "date_start": "2021-10-10",
+      "date_end": "2021-10-31"
+    }
+  }
+]

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+
+    <!--Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+
+    {#    <!--Custom CSS-->#}
+    <!-- Project style -->
+    <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!--font-awesome-->
+    <link rel="stylesheet" type="text/css" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+</head>
+
+<body>
+
+{% if not special_content %}
+    {% block content %}{% endblock %}
+{% else %}
+    {% include "snippets/_header.html" %}
+    {% block special_content %}{% endblock %}
+{% endif %}
+
+{% include "snippets/_footer.html" %}
+
+
+<!-- Scripts -->
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<!-- Scripts only for hotels_list page-->
+<script src="{% static 'js/index.js' %}"></script>
+
+</body>
+</html>

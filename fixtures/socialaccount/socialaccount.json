@@ -1,0 +1,14 @@
+[
+  {
+    "model": "socialaccount.socialaccount",
+    "pk": 7,
+    "fields": {
+      "user": 10,
+      "provider": "vk",
+      "uid": "333826807",
+      "last_login": "2021-10-11T12:13:11.025Z",
+      "date_joined": "2021-10-11T12:07:03.151Z",
+      "extra_data": "{\"first_name\": \"\\u041b\\u044e\\u0434\\u043c\\u0438\\u043b\\u0430\", \"id\": 333826807, \"last_name\": \"\\u0418\\u0441\\u043a\\u0430\\u043d\\u0434\\u0435\\u0440\\u043e\\u0432\\u0430\", \"can_access_closed\": true, \"is_closed\": false, \"sex\": 1, \"screen_name\": \"aliska20182018\", \"online\": 0, \"nickname\": \"\", \"bdate\": \"14.2.1959\", \"city\": {\"id\": 1, \"title\": \"\\u041c\\u043e\\u0441\\u043a\\u0432\\u0430\"}, \"country\": {\"id\": 1, \"title\": \"\\u0420\\u043e\\u0441\\u0441\\u0438\\u044f\"}, \"timezone\": 4.0, \"photo_max_orig\": \"https://sun7-7.userapi.com/s/v1/if1/zCh_0wGQk2jOlx830YSofw8K6PeNgWAkwipc2RPDdeJ6WVp1c3UWaynZ7MhTuMhsBMiluSYs.jpg?size=400x400&quality=96&crop=65,20,230,230&ava=1\", \"has_mobile\": 1, \"photo_medium\": \"https://sun7-7.userapi.com/s/v1/if1/4QVWCx6KXKvkXUIbXzmOWeS9Ei6Rp6QrPK6yHCFBSbgs2UDF8Kq8U45Yz4SZot8go2_O9NoR.jpg?size=100x100&quality=96&crop=79,34,201,201&ava=1\", \"photo\": \"https://sun7-7.userapi.com/s/v1/if1/873D71UtJtfCwH6ERv21u57TOxe6ZA2XcqDC3O4PTy3DoxQpD9c2KuzHO8kmI2GvPASpkIoQ.jpg?size=50x50&quality=96&crop=79,34,201,201&ava=1\", \"photo_big\": \"https://sun7-7.userapi.com/s/v1/if1/rQdpweU4yd0fd7Ai6fduYA1wyOsSAMy-HuLvfGhGmTkKDiX-Vdp33FHKrxe0-KCtcTCkka6L.jpg?size=200x200&quality=96&crop=65,20,230,230&ava=1\", \"home_phone\": \"\", \"activity\": \"\", \"last_seen\": {\"platform\": 7, \"time\": 1629573755}, \"university\": 265, \"university_name\": \"\\u041c\\u042d\\u0421\\u0418\", \"faculty\": 1159, \"faculty_name\": \"\\u0418\\u043d\\u0441\\u0442\\u0438\\u0442\\u0443\\u0442 \\u044d\\u043a\\u043e\\u043d\\u043e\\u043c\\u0438\\u043a\\u0438 \\u0438 \\u0441\\u0442\\u0430\\u0442\\u0438\\u0441\\u0442\\u0438\\u043a\\u0438\", \"graduation\": 0, \"relation\": 0, \"universities\": [{\"city\": 1, \"country\": 1, \"faculty\": 1159, \"faculty_name\": \"\\u0418\\u043d\\u0441\\u0442\\u0438\\u0442\\u0443\\u0442 \\u044d\\u043a\\u043e\\u043d\\u043e\\u043c\\u0438\\u043a\\u0438 \\u0438 \\u0441\\u0442\\u0430\\u0442\\u0438\\u0441\\u0442\\u0438\\u043a\\u0438\", \"id\": 265, \"name\": \"\\u041c\\u042d\\u0421\\u0418\"}], \"counters\": {\"albums\": 0, \"audios\": 0, \"followers\": 1, \"friends\": 1, \"gifts\": 0, \"online_friends\": 0, \"pages\": 0, \"photos\": 1, \"subscriptions\": 0, \"videos\": 0, \"new_photo_tags\": 0, \"new_recognition_tags\": 0, \"clips_followers\": 2, \"groups\": 2}, \"email\": \"alion.dim@yandex.ru\"}"
+    }
+  }
+]

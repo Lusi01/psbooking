@@ -1,0 +1,144 @@
+{% extends "all.html" %}
+{% load psbookingtags %}
+{% load static %}
+
+{% block account_content %}
+
+    <div class="col-lg-9">
+        <div class="card border-0 shadow-sm">
+            <div class="dashboard-title">
+                <h4 class="mb-0">
+                    Создание номеров для
+                    <a href="{% url 'hotels:hotel_update' hotel_id %}" class="pink"> {{ hotel }} </a>
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col-md-6 mb-4">
+
+                        <div class="card-header mb-3 text-center">
+                            Номер 1
+                        </div>
+
+                        {{ form.non_field_errors }}
+                        <form class="form-ajax-1" action="." data-url="." method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                {{ form.errors }}
+
+                                {% if field.name == "logo" %}
+                                    <div class="mb-3 text-start">
+                                        <label class="form-label">Фотография номера</label>
+                                        <img style="max-width:210px" src="{{ room.logo_url }}"
+                                             class="card-img-top" alt="{{ room }}">
+                                        {{ field }}
+
+                                    </div>
+                                {% elif field.name == "category" %}
+                                    <div class="mb-3">
+                                        <label>Тип номера</label>
+                                        {{ field }}
+                                    </div>
+
+                                {% elif field.name == "price" %}
+                                    <div class="mb-3">
+                                        <label>Цена за ночь</label>
+                                        {{ field }}
+                                    </div>
+                                {% elif field.name == "description" %}
+                                    <div class="mb-3">
+                                        <label>Описание</label>
+                                        {{ field }}
+                                    </div>
+                                {% elif field.name == "hotel" %}
+                                    <div class="mb-3" style="display: none">
+                                        <label for="id_hotel1">Отель</label>
+                                        <input value='{{ hotel_id }}' name='hotel' type="number" class="form-control"
+                                               id="id_hotel1">
+                                    </div>
+
+                                {% else %}
+                                    {{ field.label_tag }}
+                                    {{ field }}
+                                {% endif %}
+
+                                {% if field.errors %}
+                                    <div class="alert alert-danger">
+                                        {{ field.errors }}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+
+                            <button type="submit" class="room-btn but-ajax-1">
+                                Сохранить
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card-header mb-3 text-center">
+                            Номер 2
+                        </div>
+
+                        {{ form.non_field_errors }}
+                        <form class="form-ajax-2" action="." data-url="." method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+                            {% for field in form %}
+                                {% if field.name == "logo" %}
+                                    <div class="mb-3 text-start">
+                                        <label class="form-label">Фотография номера</label>
+                                        <img style="max-width:210px" src="{{ room.logo_url }}"
+                                             class="card-img-top" alt="{{ room }}">
+                                        {{ field }}
+
+                                    </div>
+                                {% elif field.name == "category" %}
+                                    <div class="mb-3">
+                                        <label>Тип номера</label>
+                                        {{ field }}
+                                    </div>
+
+                                {% elif field.name == "price" %}
+                                    <div class="mb-3">
+                                        <label>Цена за ночь</label>
+                                        {{ field }}
+                                    </div>
+                                {% elif field.name == "description" %}
+                                    <div class="mb-3">
+                                        <label>Описание</label>
+                                        {{ field }}
+                                    </div>
+                                {% elif field.name == "hotel" %}
+                                    <div class="mb-3" style="display: none">
+                                        <label for="id_hotel2">Отель</label>
+                                        <input value='{{ hotel_id }}' name='hotel' type="number" class="form-control"
+                                               id="id_hotel2">
+                                    </div>
+
+                                {% else %}
+                                    {{ field.label_tag }}
+                                    {{ field }}
+                                {% endif %}
+
+                                {% if field.errors %}
+                                    <div class="alert alert-danger">
+                                        {{ field.errors }}
+                                    </div>
+                                {% endif %}
+
+                            {% endfor %}
+
+                            <button type="submit" class="room-btn but-ajax-2">
+                                Сохранить
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

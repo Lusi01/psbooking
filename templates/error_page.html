@@ -1,0 +1,23 @@
+{% extends "__base.html" %}
+{% load i18n static %}
+{% block title %}PS-booking - Error{% endblock %}
+
+{% block content %}
+    <!-- error section starts -->
+    <section class="error overflow-hidden pb-8">
+        <div class="container">
+            <div class="error-content text-center">
+                <h2 class="mb-2">Oops! Что-то пошло не так</h2>
+                <object type="image/svg+xml" data={% static 'images/404_1.svg' %}>
+                    <img src="{% static 'images/404_1.jpg' %}" alt="">
+                </object>
+
+                <h3 class="m-0">Мы сожалеем, но страница, которую Вы запрашиваете, не найдена</h3>
+                <div class="error-btn mt-4">
+                    <a href="{% url 'main:index' %}" class="nir-btn mr-2 text-uppercase">На главную</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- error section Ends -->
+{% endblock %}

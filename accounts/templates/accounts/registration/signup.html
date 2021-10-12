@@ -1,0 +1,88 @@
+{% extends "__base.html" %}
+{% load psbookingtags %}
+{% load static %}
+
+{% block title %}PS-booking - регистрация{% endblock %}
+
+{% block content %}
+
+    {% include "snippets/_header.html" %}
+
+    <!-- BreadCrumb Starts -->
+    <section class="breadcrumb-main pb-0 mb-5" style="background-image: url({% static 'images/bg/bg8.jpg' %})">
+        <div class="breadcrumb-outer pt-10">
+            <div class="container">
+                <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                    <h2 class="mb-0">Создание аккаунта</h2>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends -->
+
+    <!-- hotel detail starts -->
+    <div class="container mt-5 pt-5">
+        <div class="row justify-content-center" style="min-height: calc(100vh - 453px)">
+            <div class="col-auto mb-4">
+                <div class="login-content border p-4">
+                    <h4 class="">Создание аккаунта на PS-Booking</h4>
+                    {{ form.non_field_errors }}
+                    <form action="." method="post">
+                        {% csrf_token %}
+
+                        {% for field in form %}
+                            <div class="form-group mb-3">
+                                {{ field.label_tag }} {{ field }} <span>{{ field.help_text }}</span>
+                            </div>
+                            {% if field.errors %}
+                                <div class="alert alert-danger">
+                                    {{ field.errors }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                        <div class="form-btn text-center">
+                            <button type="submit" class="nir-btn">Создать Аккаунт</button>
+                        </div>
+                    </form>
+
+                    <div class="login-social text-center mt-5 mb-2">
+                        <p class=""><strong>- или войти через соц.сети -</strong></p>
+                        <a href="#" class="btn-facebook"><i class="bi bi-facebook me-1"></i>Facebook</a>
+                        <a href="#" class="btn-twitter"><i class="bi bi-twitter me-1"></i>Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hotel detail Ends -->
+
+
+    {##}
+    {##}
+    {##}
+    {#    <div class="container">#}
+    {#        <div class="row">#}
+    {#            <div class="col">#}
+    {#                <h1>Создайте свою учетную запись</h1>#}
+    {#                <hr>#}
+    {#                {{ form.non_field_errors }}#}
+    {#                <form action="." method="post">#}
+    {#                    {% csrf_token %}#}
+    {#                    {% for field in form %}#}
+    {#                        <div class="mb-3">#}
+    {#                            {{ field.label_tag }} {{ field }} <span>{{ field.help_text }}</span>#}
+    {#                        </div>#}
+    {#                        {% if field.errors %}#}
+    {#                            <div class="alert alert-danger">#}
+    {#                                {{ field.errors }}#}
+    {#                            </div>#}
+    {#                        {% endif %}#}
+    {#                    {% endfor %}#}
+    {#                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>#}
+    {#                </form>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+{% endblock %}

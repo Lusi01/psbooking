@@ -1,0 +1,13 @@
+[
+  {
+    "model": "socialaccount.socialtoken",
+    "pk": 4,
+    "fields": {
+      "app": 1,
+      "account": 7,
+      "token": "0d58dbaf596e7ae37acb606d471c5c85a5381df2b1a8d8bc2fb93d287199584fa7dad3df6941cd1f075ee",
+      "token_secret": "",
+      "expires_at": "2021-10-12T12:13:10.709Z"
+    }
+  }
+]

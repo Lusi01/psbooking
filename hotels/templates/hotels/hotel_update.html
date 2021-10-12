@@ -1,0 +1,136 @@
+{% extends "all.html" %}
+{% load psbookingtags %}
+{% load static %}
+
+{% block account_content %}
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="dashboard-title">
+                    <h4 class="mb-0">Основная информация</h4>
+                    {% if hotel %} Редактирование отеля {{ hotel.title }}
+                    {% else %} Добавление нового отеля
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    {{ form.non_field_errors }}
+                    <form action="." method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        {% for field in form %}
+                            <div class="mb-3 text-start">
+
+                                {% if field.name == "city" %}
+                                    <a class="open_modal_update"
+                                       data-bs-toggle="modal"
+                                       data-bs-target="#updateModal"
+                                       data-id="{{ hotel.city_id }}"
+                                       title="Изменить выбранный объект типа  Город=''"
+                                    >
+                                        <img src="{% static 'images/admin/icon-changelink.svg' %}" alt="Изменить">
+                                    </a>
+
+                                    <a class="open_modal"
+                                       data-bs-toggle="modal"
+                                       data-bs-target="#createModal"
+                                       title="Добавить ещё один объект типа  Город=''"
+                                    >
+                                        <img src="{% static 'images/admin/icon-addlink.svg' %}" alt="Добавить">
+                                    </a>
+
+                                    <a class="open_modal_delete"
+                                       data-bs-toggle="modal"
+                                       data-bs-target="#deleteModal"
+                                       data-id="{{ hotel.city_id }}"
+                                       title="Удалить выбранный объект типа Город=''"
+                                    >
+                                        <img src="{% static 'images/admin/icon-deletelink.svg' %}" alt="Удалить">
+                                    </a>
+
+                                {% endif %}
+
+                                {% if field.name == "logo" %}
+                                    <div style="display: grid">
+                                        <label class="form-label">Фотография отеля</label>
+                                        <img style="max-width:210px" src="{{ hotel.logo_url }}"
+                                             class="card-img-top" alt="{{ hotel }}">
+                                    </div>
+                                    {{ field }}
+
+
+                                {% elif field.name == "description" %}
+                                    {{ field.label_tag }}
+                                    {% autoescape off %}
+                                        {{ field.value|safe|escape }}
+                                    {% endautoescape %}
+                                    {{ field }}
+
+                                {% else %}
+                                    {{ field.label_tag }}
+                                    {{ field }}
+                                {% endif %}
+
+                            </div>
+                            {% if field.errors %}
+                                <div class="alert alert-danger">
+                                    {{ field.errors }}
+                                </div>
+                            {% endif %}
+
+                        {% endfor %}
+
+                        <button type="submit" class="nir-btn">
+                            Сохранить
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if hotel %}
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="dashboard-title">
+                        <h4 class="mb-0">Номерной фонд</h4>
+                    </div>
+                    <div class="table-responsive table-desi">
+                        <table class="basic-table table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Фото</th>
+                                <th>Тип номера</th>
+                                <th>Цена за ночь</th>
+                                <th>Описание</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for room in hotel.rooms.all %}
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'hotels:room_update' room.id %}">
+                                            <img src="{{ room.logo_url }}"
+                                                 class="w-25" alt="{{ room }}">
+                                        </a>
+                                    </td>
+                                    <td>{{ room.category }}</td>
+                                    <td>{{ room.get_price_1000|floatformat:3 }}</td>
+                                    <td>{{ room.description }}</td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <a href="{% url 'hotels:room_create' hotel.pk %}" class="room-btn m-3">Добавить номер</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}
+

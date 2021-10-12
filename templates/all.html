@@ -1,0 +1,98 @@
+{% extends "__base.html" %}
+{% load psbookingtags %}
+{% load static %}
+
+{% block title %}PS-booking - {{ title }}{% endblock %}
+
+{% block content %}
+
+    {% include "snippets/_header.html" %}
+
+    <!-- BreadCrumb Starts -->
+    <section class="breadcrumb-main pb-2" style="background-image: url({% static 'images/bg/bg8.jpg' %})">
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends -->
+
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                {% include './hotels/city_create.html' %}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="updateModal"
+         tabindex="-1"
+         aria-labelledby="updateModalLabel"
+         aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                {% if id_city %}
+                    {% include './hotels/city_update.html' with pk=id_city link=url %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal"
+         tabindex="-1"
+         aria-labelledby="deleteModalLabel"
+         aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                {% if id_city %}
+                    {#            подключить виджет с передачей параметра pk #}
+                    {% include './hotels/city_delete.html' with pk=id_city link=url %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard starts -->
+    <div class="container my-5 py-5">
+        <div id="my-message" style="display: none">
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="alert alert-light   fade show" role="alert"
+                         style="box-shadow: 0px 0px 30px #cccccc57;
+                                background: #f2f2f2;
+                                border: 1px solid #d9d9d9;
+                                padding: 5px;"
+                    >
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div id="mess-alert" class="alert
+                    alert-dismissible fade show" role="alert">
+                                        <p id="my-mess" class="my-0 py-0"></p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% include "snippets/_left-menu.html" %}
+
+            <div class="col-lg-9">
+                {% include "snippets/_messages.html" %}
+                {% block account_content %}
+                    {{ hotel_id }}
+                {% endblock %}
+            </div>
+
+        </div>
+    </div>
+    <!-- Dashboard ends -->
+{% endblock %}

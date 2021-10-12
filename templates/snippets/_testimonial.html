@@ -1,0 +1,31 @@
+{% load static %}
+
+<!-- testimonial starts -->
+<section class="testimonial pb-6 pt-9" style="background-image: url({% static 'images/testimonial.png' %})">
+    <div class="container">
+        <div class="text-center mb-5 pb-2 w-50 mx-auto">
+            <h4 class="mb-0">Отзывы</h4>
+            <h2 class="m-0">Что <span class="pink">о нас говорят</span></h2>
+        </div>
+        <div class="row">
+
+            {% for review in review_list %}
+
+                <div class="col-sm-12">
+                    <div class="testimonial-item1">
+                        <div class="author-info mb-2">
+                            <img src="{{ review.user.profile.avatar_url }}" alt="user">
+                            <h4 class="my-1 pink">{{ review.user.first_name }} {{ review.user.last_name }}</h4>
+                            <p class="my-0">{{ review.updated|date:"j E Y" }}</p>
+                        </div>
+                        <div class="details d-flex justify-content-between">
+                            <p class="m-0">{{ review.text }}</p>
+                        </div>
+                        <i class="bi bi-chat-left-quote-fill"></i>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- testimonial ends -->

@@ -1,0 +1,62 @@
+{% extends "all.html" %}
+{% load psbookingtags %}
+{% load static %}
+
+
+{% block account_content %}
+    <div class="shadow-sm rounded">
+        <div class="dashboard-title">
+            <h4 class="mb-0">Бронирования</h4>
+        </div>
+        <div class="table-responsive table-desi">
+
+            <table class="basic-table table table-hover">
+                <thead>
+                <tr>
+                    <th>Страна</th>
+                    <th>Город</th>
+                    <th>Отель</th>
+                    <th>Дата заезда</th>
+                    <th>Дата отъезда</th>
+                    <th>Моя оценка</th>
+                    {% if user.profile.role.name == 'Пользователь' %}
+                        <th>Отменить бронь</th>
+                    {% else %}
+                        <th>Забронировал</th>
+                    {% endif %}
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for book in booking_objects %}
+                    <tr>
+                        <td>{{ book.room.hotel.country }}</td>
+                        <td>{{ book.room.hotel.city.get_city }}</td>
+                        <td>{{ book.room.hotel }}*</td>
+                        <td>{{ book.date_start|date:"d.m.Y"|default:'--' }}</td>
+                        <td>{{ book.date_end|date:"d.m.Y"|default:'--' }}</td>
+
+                        <th>{{ book.room.hotel.get_rate|default:'---' }} </th>
+
+                        {% if user.profile.role.name == 'Пользователь' %}
+                            <th>
+                                {% if book.date_end|date:"d.m.Y" > now|date:"d.m.Y" %}
+                                    <a href="{% url 'hotels:room_unbooking' book.id %}"
+                                       class="btn btn-sm btn-danger">Отменить</a>
+                                {% endif %}
+                            </th>
+                        {% else %}
+                            <th>
+                                {{ book.user.first_name }} {{ book.user.last_name }}
+                            </th>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,81 @@
+{% extends "all.html" %}
+{% load psbookingtags %}
+{% load static %}
+
+{% block account_content %}
+
+    {% if user.profile.role.name == 'Администратор' %}
+        <div class="row">
+
+            <div class="col-lg-4">
+                <div class="dashboard-stat mb-4">
+                    <div class="dashboard-stat-content"><h4>{{ users_count }}</h4> <span>Пользователей</span></div>
+                    <div class="dashboard-stat-icon"><i class="bi bi-person"></i></div>
+                    <div class="dashboard-stat-item"><p>Пользователей зарегистрировано на сайте</p></div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="dashboard-stat mb-4">
+                    <div class="dashboard-stat-content"><h4>{{ booking_count|default:0 }}</h4>
+                        <span>{{ booking_count|default:0|pluralo:'Бронь,Бронирования,Бронирований' }} </span></div>
+                    <div class="dashboard-stat-icon"><i class="bi bi-bar-chart-line"></i></div>
+                    <div class="dashboard-stat-item">
+                        <p>Количество забронированных номеров</p></div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="dashboard-stat mb-4">
+                    <div class="dashboard-stat-content"><h4>{{ review_count|default:0 }}</h4>
+                        <span>{{ booking_count|default:0|pluralo:'Отзыв,Отзыва,Отзывов' }}</span></div>
+                    <div class="dashboard-stat-icon"><i class="bi bi-chat-quote"></i></div>
+                    <div class="dashboard-stat-item"><p>Оставлено отзывов</p></div>
+                </div>
+            </div>
+
+        </div>
+    {% endif %}
+
+    <div class="row mb-4">
+        <div class="col">
+            <div class="shadow-sm rounded">
+                <div class="dashboard-title">
+                    <h4 class="mb-0">Отели</h4>
+                </div>
+
+                <div class="table-responsive table-desi">
+                    <table class="basic-table table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Страна</th>
+                            <th>Город</th>
+                            <th>Отель</th>
+                            <th>Бронирований</th>
+                            <th>Отзывов</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for hotel in dashboard_objects %}
+                            <tr>
+                                <td>{{ hotel.country }}</td>
+                                <td>{{ hotel.city.get_city }}</td>
+                                <td class="blue-ref"><a class="blue-ref"
+                                                        href="{% url 'hotels:hotel_update' hotel.pk %}">{{ hotel }}</a>
+                                </td>
+                                <td>{{ hotel.display_booking_count|default:0 }}</td>
+                                <td>{{ hotel.reviews.count|default:0 }}</td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+                <a href="{% url 'hotels:hotel_create' %}" class="nir-btn m-3">Добавить отель</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

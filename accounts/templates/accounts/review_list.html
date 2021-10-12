@@ -1,0 +1,64 @@
+{% extends "all.html" %}
+{% load psbookingtags %}
+{% load mytags %}
+{% load static %}
+
+
+{% block account_content %}
+    <div class="shadow-sm rounded">
+        <div class="dashboard-title">
+            <h4 class="mb-0">Отзывы</h4>
+        </div>
+        <div class="table-responsive table-desi">
+
+            <table class="basic-table table table-hover">
+                <thead>
+                <tr>
+                    <th>Тур</th>
+                    <th>Оценка</th>
+                    <th>Отзыв</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in object_list %}
+                    <tr>
+                        <td>{{ obj.hotel }}*<br>
+                            <i class="bi bi-geo-alt me-1"></i>{{ obj.hotel.city }}<br>
+                            <i class="bi bi-calendar4-event me-1"></i>
+                            <span class="book_data">
+                            {% with status=True %}
+                                {% for room in obj.hotel.rooms.all %}
+                                    {% if status %}
+                                        {% if room.bookings.last.date_start %}
+                                            {{ room.bookings.last.date_start|date:"d.m.Y"|default:'--' }} -
+                                            {{ room.bookings.last.date_end|date:"d.m.Y"|default:'--' }}
+                                            {% changeStatement status as status %}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endwith %}
+                            </span>
+                        </td>
+                        <th>{{ obj.rate }}</th>
+                        <th>{{ obj.text }}</th>
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        {# вставить прочерки, если в строке у данного отеля нет ни одного бронирования #}
+        var dates = document.getElementsByClassName('book_data')
+        for (var i = 0; i < dates.length; i++) {
+            if (dates[i].innerText === '') {
+                dates[i].innerText = '-- - --'
+            }
+        }
+    </script>
+
+{% endblock %}
+

@@ -1,0 +1,39 @@
+<div id="www-my-message" class="row mb-4">
+    {% if messages %}
+        <div class="col">
+            <div class="alert alert-light   fade show" role="alert"
+                 style="box-shadow: 0px 0px 30px #cccccc57;
+                        background: #f2f2f2;
+                        border: 1px solid #d9d9d9;
+                        padding: 5px;"
+            >
+
+                {#            Сообщение пользователю#}
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <p> {{ DEFAULT_MESSAGE_LEVELS.ERRORS }}</p>
+                            {% for message in messages %}
+                                <div class="alert
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                        alert-danger
+                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                        alert-warning
+                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                        alert-success
+                    {% else %}
+                        alert-primary
+                    {% endif %}
+                    alert-dismissible fade show" role="alert">
+                                    <p id="www-my-mess" class="my-0 py-0">{{ message }}</p>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>

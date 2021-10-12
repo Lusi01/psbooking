@@ -1,0 +1,252 @@
+{% extends "__base.html" %}
+{% load psbookingtags %}
+{% load static %}
+{% block title %}PS-booking - отели{% endblock %}
+
+{% block content %}
+
+    {% include "snippets/_header.html" %}
+    <!-- BreadCrumb Starts -->
+    <section class="breadcrumb-main pb-0 mb-5" style="background-image: url({% static 'images/bg/bg8.jpg' %})">
+        <div class="breadcrumb-outer pt-10">
+            <div class="container">
+                <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                    <h2 class="mb-0">Бронирование отеля</h2>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends -->
+
+    <!-- hotel detail starts -->
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col mb-4">
+
+                {% include "snippets/_messages.html" %}
+
+                <!-- description -->
+                <div class="description">
+                    <div class="border-b mb-2 pb-2">
+                        <p class="my-3">
+                            {% if not hotel.is_repair %}
+                                <span class="bg-pink p-3 text-white">Недавно отремонтирован </span>
+                            {% endif %}
+                        </p>
+                        <h4 class="font-weight-bold mb-0 me-2 d-inline-block">
+                            {{ hotel.title }}
+                        </h4>
+                        <div class="rating d-inline-block">
+                            {% for el in category %}
+                                <span class="bi bi-star-fill"></span>
+                            {% endfor %}
+                        </div>
+                        <p class="mb-0">
+                            <i class="bi bi-geo-alt me-2"></i>{{ hotel.city }}
+                        </p>
+                    </div>
+
+                    <img style="max-width:700px" src="{{ hotel.logo_url }}" class="card-img-top" alt="{{ hotel }}">
+
+                    <div class="my-4">
+                        <h4>Описание</h4>
+                        <p>
+                            {% autoescape off %}
+                                {{ hotel.description|safe|escape }}
+                            {% endautoescape %}
+                        </p>
+                    </div>
+
+                    <div class="my-4">
+                        <h4>Сервис</h4>
+                        <table class="table">
+                            <tbody>
+                            {% for serv in hotel.service.all %}
+                                <tr>
+                                    <th>{{ forloop.counter }}</th>
+                                    <td>{{ serv.title }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="my-4 card shadow-sm">
+                        <div class="card-body">
+                            <h4>Наличие мест</h4>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Дата заезда</h5>
+                                    <h6 class="text-primary">{{ filter_date_start|date:"j E Y"|default:'--' }}</h6>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Дата отъезда</h5>
+                                    <h6 class="text-primary">{{ filter_date_end|date:"j E Y"|default:'--' }}</h6>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <h5>Доступность</h5>
+                                    {% if filter_date_start %}
+                                        <!-- available -->
+                                        {% if available %}
+                                            <h6 class="text-success"><i class="bi bi-calendar-check me-2"></i>Есть места
+                                            </h6>
+                                        {% else %}
+                                            <!-- not available -->
+                                            <h6 class="text-secondary"><i class="bi bi-calendar-x me-2"></i>Мест нет
+                                            </h6>
+                                        {% endif %}
+
+                                    {% else %}
+                                        <!-- lack of information-->
+                                        <h6 class="text-secondary">Выберите даты</h6>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="my-4">
+                        <h4>Выбор номера</h4>
+                        {% for room in rooms %}
+                            <div class="card mb-3">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col-md-4">
+                                        <img src="{{ room.logo_url }}" class="img-fluid rounded-start" alt="room">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <h4 class="card-title">{{ room.category|capfirst }}</h4>
+                                                    <p class="card-text">{{ room.description|capfirst }}</p>
+                                                </div>
+                                                <div class="col-md-4 text-center">
+                                                    {% if not room.is_booking %}
+                                                        <p class="mb-1">{{ room.price|floatformat:2 }} / ночь</p>
+                                                        {% if filter_date_start %}
+
+                                                            <form action="{% url 'hotels:room_booking' %}"
+                                                                  method="post">
+                                                                {% csrf_token %}
+
+                                                                <div style="display: block">
+                                                                    <input type="hidden" name="room"
+                                                                           value="{{ room.pk|add:'0' }}" id="id_room">
+                                                                    <input type="hidden" name="user"
+                                                                           value="{{ user.pk|add:'0' }}">
+                                                                    <input type="hidden" name="date_start"
+                                                                           value="{{ filter_date_start|date:'Y-m-d' }}"
+                                                                           id="id_date_start">
+                                                                    <input type="hidden" name="date_end"
+                                                                           value="{{ filter_date_end|date:'Y-m-d' }}"
+                                                                           id="id_date_end">
+                                                                </div>
+
+                                                                <button
+                                                                        {% if not user.is_authenticated %}
+                                                                            disabled
+                                                                        {% endif %}
+                                                                            type="submit"
+                                                                            class="btn btn-primary mt-3 nir-btn w-100">
+                                                                    Я бронирую
+                                                                </button>
+                                                            </form>
+
+                                                        {% else %}
+                                                            <a href="/"
+                                                               class="btn
+                                                            btn-outline-secondary">
+                                                                Указать даты поездки
+                                                            </a>
+                                                        {% endif %}
+                                                    {% else %}
+                                                        <p class="mb-1 text-danger">На выбранные даты мест нет</p>
+                                                    {% endif %}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="my-4">
+                        <h4>Рейтинг отеля</h4>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="bg-pink text-center p-4">
+                                    <h2 class="text-white"><span>
+                                        {{ hotel.new_rate|default:0|floatformat:1 }}</span>/5</h2>
+                                    <p class="text-white">Всего {{ hotel.reviews.count }}
+                                        {{ hotel.reviews.count|default:0|pluralo:'отзыв,отзыва,отзывов' }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="single-comments single-box my-4">
+                        <h4>Отзывы</h4>
+                        <div class="row">
+                            <div class="col">
+                                {% for review in hotel.reviews.all %}
+                                    <div class="comment-box">
+                                        <div class="comment-image" style="max-width: 5.33vw; min-width: 70px">
+                                            <img src="{{ review.user.profile.avatar_url }}"
+                                                 alt="user">
+                                        </div>
+                                        <div class="comment-content w-100">
+                                            <h5 class="mb-1">{{ review.user.first_name }} </h5>
+                                            <p class="comment-date">{{ review.created|date:"j E Y" }}</p>
+                                            <div class="comment-rate">
+                                                <div class="rating mar-right-15">
+                                                    {% for el in review.list_rate %}
+                                                        <span class="bi bi-star-fill"></span>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            <p class="comment">{{ review.text }}</p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>Оставить отзыв</h4>
+                    <div class="py-4 mt-4">
+                        <div class="card">
+                            <div class="card-header">
+                                Написать отзыв
+                            </div>
+                            <div class="my-4 card border-0 shadow">
+                                <div class="card-body">
+                                    <form action="{% url 'hotels:review_creation' %}" method="post">
+                                        {% csrf_token %}
+                                        {{ review_form }}
+                                        <button
+                                                {% if not user.is_authenticated %}
+                                                    disabled
+                                                {% endif %}
+                                                    type="submit" class="btn btn-primary mt-3">
+                                            Отправить отзыв
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- hotel detail Ends -->
+{% endblock %}
+

@@ -1,0 +1,22 @@
+[
+  {
+    "model": "account.emailaddress",
+    "pk": 3,
+    "fields": {
+      "user": 10,
+      "email": "iskmila@mail.ru",
+      "verified": false,
+      "primary": true
+    }
+  },
+  {
+    "model": "account.emailaddress",
+    "pk": 4,
+    "fields": {
+      "user": 10,
+      "email": "alion.dim@yandex.ru",
+      "verified": false,
+      "primary": false
+    }
+  }
+]

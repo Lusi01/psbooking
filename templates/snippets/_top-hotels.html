@@ -1,0 +1,54 @@
+{% load static %}
+{% load psbookingtags %}
+
+<!-- top hotels starts -->
+<section class="top-destination overflow-hidden bg-navy">
+    <div class="container">
+        <div class="section-title section-title-w text-center mb-5 pb-2 w-50 mx-auto">
+            <h4 class="mb-0 text-white">Отели</h4>
+            <h2 class="m-0 text-white">Выбери <span>лучший отель</span></h2>
+        </div>
+        <div class="row d-flex align-items-center">
+
+            {% for hotel in hotel_list %}
+
+                <div class="col-lg-4 col-md-6 p-1">
+                    <div class="desti-image">
+                        <img src="{{ hotel.logo_url }}" alt="{{ hotel }}" style="min-height: 420px">
+                        <div class="desti-content hotel-content d-flex align-items-center justify-content-between bg-white py-2 px-3">
+                            <div>
+                                <div class="pb-2">
+                                <span class="bg-navy text-white p-2 me-2">
+                                    {{ hotel.new_rate |floatformat:1|default:0.0 }}
+                                </span>
+                                    {{ hotel.display_reviews_count }}
+                                    {{ hotel.display_reviews_count|default:0|pluralo:'отзыв,отзыва,отзывов' }}
+                                </div>
+                                <h4 class="mb-0 navy">{{ hotel.title }}</h4>
+                                <span><i class="bi bi-geo-alt me-2"></i>{{ hotel.city }}</span>
+                            </div>
+                            <div>
+                                <h4 class="mb-0 pink">от {{ hotel.get_min_price }}</h4>
+                                <span>за ночь</span>
+                            </div>
+                        </div>
+                        <div class="desti-overlay">
+                            <a>
+                                <button id={{ hotel.pk }}
+                                                type="submit"
+                                        class="nir-main-btn">
+                                    <span class="text-white">Бронировать</span>
+                                    <i class="bi bi-arrow-right text-white"></i>
+                                </button>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+<!-- top hotels ends -->

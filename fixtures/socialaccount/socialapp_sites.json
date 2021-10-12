@@ -1,0 +1,18 @@
+[
+  {
+    "model": "socialaccount.socialapp_sites",
+    "pk": 10,
+    "fields": {
+      "socialapp": 1,
+      "site": 2
+    }
+  },
+  {
+    "model": "socialaccount.socialapp_sites",
+    "pk": 11,
+    "fields": {
+      "socialapp": 1,
+      "site": 1
+    }
+  }
+]

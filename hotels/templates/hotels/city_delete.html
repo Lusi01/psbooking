@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h3 class="modal-title">Вы уверены?</h3>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+
+</div>
+
+<br>
+<p>Вы уверены, что хотите удалить город</p>
+<p>{{ delete_city.cityname }}?</p><br>
+<p>Все связанные объекты также будут удалены</p><br>
+
+{{ city.non_field_errors }}
+<form action="{% url 'hotels:city_delete' pk %} " role="form" method="post">
+    {% csrf_token %}
+    <div class="modal-body">
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-danger">Да, я уверен</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Нет, отменить</button>
+    </div>
+</form>

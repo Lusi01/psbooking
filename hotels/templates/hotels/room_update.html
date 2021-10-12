@@ -1,0 +1,47 @@
+{% extends "all.html" %}
+{% load psbookingtags %}
+{% load static %}
+
+{% block account_content %}
+    <div class="col-lg-9">
+        <div class="card border-0 shadow-sm">
+            <div class="dashboard-title">
+                <h4 class="mb-0">
+                    Номер {{ room }},
+                    <a href="{% url 'hotels:hotel_update' room.hotel_id %}" class="pink"> {{ room.hotel }} </a>
+                </h4>
+            </div>
+            <div class="card-body">
+                {{ form.non_field_errors }}
+                <form action="." method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.name == "logo" %}
+                            <div class="mb-3 text-start">
+                                <label class="form-label">Фотография номера</label>
+                                <img style="max-width:210px" src="{{ room.logo_url }}"
+                                     class="card-img-top" alt="{{ room }}">
+                                {{ field }}
+                            </div>
+                        {% else %}
+                            <div class="mb-3 text-start">
+                                {{ field.label_tag }}
+                                {{ field }}
+                            </div>
+                        {% endif %}
+
+                        {% if field.errors %}
+                            <div class="alert alert-danger">
+                                {{ field.errors }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <button type="submit" class="room-btn">
+                        Сохранить
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

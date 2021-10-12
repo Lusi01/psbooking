@@ -1,0 +1,102 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$lQVAnzjjWevEYCf3cKFjVy$BQPUVEIhAvb+VltdxBxYAKZUxRV5f+e24dL48BeB/1M=",
+      "last_login": "2021-10-11T12:09:02.581Z",
+      "is_superuser": true,
+      "username": "Lusi",
+      "first_name": "�������",
+      "last_name": "�����������",
+      "email": "alion.dim@yandex.ru",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-07-24T20:54:11Z",
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$8AiCIuYhopZ1ApV1VwIZwC$SKgNVPMzoSL/kiC8hm06TAKo80ei8TeKaVqZ2ZMd+Q4=",
+      "last_login": "2021-10-08T21:53:12.496Z",
+      "is_superuser": false,
+      "username": "Bob",
+      "first_name": "�����",
+      "last_name": "������",
+      "email": "nnn@nn.ru",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-07-29T22:52:22Z",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$Elei34xDab7xS16txIGtWN$5IkEjtkeztNStBSk78wfUzazckpnVtynBFMFZdjXGHo=",
+      "last_login": "2021-09-29T20:14:38.995Z",
+      "is_superuser": true,
+      "username": "pumpskill",
+      "first_name": "",
+      "last_name": "",
+      "email": "ppp@ppp.ru",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-08-17T11:05:33Z",
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$BI95ehUfMQmwiKJcViSgcc$3fngiDBBW05cMbJA1d42kxOeTSCgQ+lizg1f5EUiIbk=",
+      "last_login": "2021-10-11T11:42:07.880Z",
+      "is_superuser": false,
+      "username": "Rita",
+      "first_name": "���������",
+      "last_name": "�������",
+      "email": "rita.dim@yandex.ru",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-08-16T20:07:33Z",
+      "groups": [
+        3
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$0LhKBwP9lLhvPbs05EbHVK$pd/4HhU6LvHZETqMDx+X01qkg03aNPZMxVbGODnyJ7Y=",
+      "last_login": "2021-10-11T12:47:37.071Z",
+      "is_superuser": true,
+      "username": "Alisa",
+      "first_name": "�����",
+      "last_name": "�����������",
+      "email": "iskmila@mail.ru",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-10-11T12:05:54Z",
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  }
+]

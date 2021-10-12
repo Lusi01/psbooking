@@ -1,0 +1,25 @@
+{% load static %}
+<!-- form main starts -->
+<div class="form-main">
+    <div class="container">
+        <form action="{% url 'hotels:hotels_list' %}" method="get">
+            <div class="form-content w-100">
+                <h3 class="form-title text-center d-inline white">Найти отель</h3>
+                <div class="d-lg-flex align-items-end justify-content-between">
+                    {% for field in filter_form %}
+                        <div class="form-group pr-4 m-0">
+                            <label for="id_{{ field.name }}">{{ field.label }}</label>
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+
+                    <div class="form-group m-0">
+                        <button type="submit" class="nir-btn w-100"><i class="bi bi-search"></i> Поиск</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="height: 150px"></div>
+</div>
+<!-- form main ends -->

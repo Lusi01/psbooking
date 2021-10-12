@@ -1,0 +1,26 @@
+{% extends "__base.html" %}
+{% load static %}
+{% block title %}PS-booking - путешествуй с удовольствием!{% endblock %}
+
+{% block special_content %}
+    {% include "snippets/_banner.html" %}
+    {% include "snippets/_form-main.html" %}
+
+    <form action="{% url 'hotels:hotels_list' %}" method="get">
+        <input id="country" class="pk" type="hidden" name="country" value="">
+        <input class="d_start" type="hidden" name="date_start" value="">
+        <input class="d_end" type="hidden" name="date_end" value="">
+        {% include "snippets/_top-destination.html" %}
+    </form>
+
+    <form action="{% url 'hotels:hotel_detail' pk %}" method="get">
+        <input id="pk" class="pk" type="hidden" name="pk" value="">
+        <input class="d_start" type="hidden" name="d_start" value="">
+        <input class="d_end" type="hidden" name="d_end" value="">
+
+        {% include "snippets/_top-hotels.html" %}
+    </form>
+
+    {% include "snippets/_testimonial.html" %}
+
+{% endblock %}

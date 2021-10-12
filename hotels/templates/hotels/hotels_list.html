@@ -1,0 +1,143 @@
+{% extends "__base.html" %}
+{% load psbookingtags %}
+{% load static %}
+{% block title %}PS-booking - отели{% endblock %}
+
+{% block content %}
+
+    {% include "snippets/_header.html" %}
+
+    <!-- BreadCrumb Starts -->
+    <section class="breadcrumb-main pb-0 mb-5" style="background-image: url({% static 'images/bg/bg8.jpg' %})">
+        <div class="breadcrumb-outer pt-10">
+            <div class="container">
+                <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                    <h2 class="mb-0">Список отелей</h2>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends -->
+
+    <!-- hotels starts -->
+    <div class="container mt-5 pt-5">
+        <div class="row flex-lg-row-reverse">
+            <div class="col-lg-8 col-xs-12 mb-4">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    {% for hotel in hotels_objects %}
+                        <div class="col">
+
+                            <div class="card border-0 shadow-sm h-100 ">
+                                <div class="item-responsive item-1by1">
+                                    <div class="card-header p-0 in-content">
+                                        <a href="{{ hotel.get_absolute_url }}">
+                                            <img style="object-fit: cover;  width: 100%; height: 100%;"
+                                                 src="{{ hotel.logo_url }}"
+                                                 class="card-img-top"
+                                                 alt="{{ hotel }}">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <p class="bg-pink text-white py-1 px-2">
+                                    <i class="bi bi-geo-alt me-2"></i>{{ hotel.city }}
+                                </p>
+                                <div class="card-body">
+                                    <div class="pb-2">
+                                        <span class="bg-navy text-white p-2 me-2">{{ hotel.new_rate |floatformat:1|default:0.0 }}</span>
+                                        {{ hotel.reviews.count }}
+                                        {{ hotel.reviews.count|default:0|pluralo:'отзыв,отзыва,отзывов' }}
+                                    </div>
+                                    <h4 class="mb-0">
+                                        <a href="{{ hotel.get_absolute_url }}">{{ hotel.title }}, {{ hotel.category }}*</a>
+                                    </h4>
+                                    <p class="mb-2">
+                                        От <span class="font-weight-bold pink">{{ hotel.get_min_price }} </span>/ ночь
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                {% include 'snippets/_pagination.html' %}
+
+            </div>
+
+            <!-- Форма ввода полей поиска -->
+            <div class="col-lg-4 col-xs-12 mb-4">
+                <div class="sidebar-sticky">
+                    <form action="." method="get">
+                        <div class="sidebar-item mb-4">
+                            <div class="form-content">
+                                <h4 class="title text-white">Поиск отелей</h4>
+                                <div class="row g-3">
+                                    <div class="col-lg-12">
+                                        <label for="id_country" class="text-white">Направление</label>
+                                        {{ filter_form.country }}
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <label for="id_date_start" class="text-white">Дата заезда</label>
+                                        {{ filter_form.date_start }}
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="id_date_end" class="text-white">Дата отъезда</label>
+                                        {{ filter_form.date_end }}
+                                    </div>
+                                    <div class="col-lg-12">
+                                        {{ filter_form.is_available }}
+                                        <label class="form-check-label text-white" for="id_is_available">
+                                            Только доступные варианты
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="nir-btn w-100">
+                                            <i class="bi bi-search me-2"></i>Найти
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="list-sidebar">
+                            <div class="sidebar-item">
+                                <h4>Цена за ночь</h4>
+
+                                <div class="input-group mb-3">
+                                    {{ filter_form.min_price }}
+                                    <span class="input-group-text">-</span>
+                                    {{ filter_form.max_price }}
+                                </div>
+                            </div>
+
+                            <div class="sidebar-item">
+                                <h4>Категория отеля</h4>
+
+                                <div class="form-check">
+                                    {{ filter_form.category }}
+                                </div>
+
+                            </div>
+
+                            <div class="sidebar-item">
+                                <h4>Сервис</h4>
+                                <div class="form-check">
+                                    {{ filter_form.service }}
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- Конец формы ввода полей поиска -->
+            </div>
+            <!-- End Форма ввода полей поиска -->
+        </div>
+    </div>
+    <!-- hotels Ends -->
+
+{% endblock %}
+
+
