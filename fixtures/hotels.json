@@ -1,0 +1,821 @@
+[
+  {
+    "model": "hotels.country",
+    "pk": 1,
+    "fields": {
+      "countryname": "Италия",
+      "logo": "destination/list/destination5.jpg"
+    }
+  },
+  {
+    "model": "hotels.country",
+    "pk": 2,
+    "fields": {
+      "countryname": "Россия",
+      "logo": "destination/list/destination10.jpg"
+    }
+  },
+  {
+    "model": "hotels.country",
+    "pk": 3,
+    "fields": {
+      "countryname": "Великобритания",
+      "logo": "destination/list/destination4.jpg"
+    }
+  },
+  {
+    "model": "hotels.country",
+    "pk": 4,
+    "fields": {
+      "countryname": "Португалия",
+      "logo": "destination/list/destination3.jpg"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 3,
+    "fields": {
+      "country": 3,
+      "cityname": "Лондон"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 4,
+    "fields": {
+      "country": 4,
+      "cityname": "Лиссабон"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 17,
+    "fields": {
+      "country": 2,
+      "cityname": "Санкт-Петербург"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 25,
+    "fields": {
+      "country": 2,
+      "cityname": "Самара"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 37,
+    "fields": {
+      "country": 2,
+      "cityname": "Саратов"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 41,
+    "fields": {
+      "country": 2,
+      "cityname": "Вологда"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 43,
+    "fields": {
+      "country": 1,
+      "cityname": "Неаполь"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 48,
+    "fields": {
+      "country": 2,
+      "cityname": "Ульяновск"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 49,
+    "fields": {
+      "country": 1,
+      "cityname": "Рим"
+    }
+  },
+  {
+    "model": "hotels.city",
+    "pk": 50,
+    "fields": {
+      "country": 2,
+      "cityname": "Москва"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 1,
+    "fields": {
+      "title": "Парковка"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 2,
+    "fields": {
+      "title": "Бесплатный Wi-Fi"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 3,
+    "fields": {
+      "title": "Трансфер от/до аэропорта"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 4,
+    "fields": {
+      "title": "Семейные номера"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 5,
+    "fields": {
+      "title": "Можно с питомцами"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 6,
+    "fields": {
+      "title": "Номера для некурящих"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 7,
+    "fields": {
+      "title": "Бар"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 8,
+    "fields": {
+      "title": "потрясающий фитнес-центр"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 9,
+    "fields": {
+      "title": "Кофеварка/чайник во всех номерах"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 10,
+    "fields": {
+      "title": "Круглосуточная стойка регистрации"
+    }
+  },
+  {
+    "model": "hotels.service",
+    "pk": 11,
+    "fields": {
+      "title": "Доставка еды и напитков в номер"
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 1,
+    "fields": {
+      "city": 4,
+      "country": 4,
+      "title": "Be Poet Baixa Hotel",
+      "description": "Отель Be Poet Baixa удобно расположен в историческом центре Лиссабона, всего в 600 метрах от района Шиаду и в 300 метрах от площади Росиу. Отель находится всего в 140 метрах от подъемника Санта-Жушта и в 450 метрах от Торговой площади и реки Тежу.",
+      "category": 3,
+      "is_repair": false,
+      "logo": "hotels/list/s1200_4ZV5Y8n.jpg",
+      "service": [
+        1,
+        2,
+        3,
+        11
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 2,
+    "fields": {
+      "city": 49,
+      "country": 1,
+      "title": "Horti 14 Borgo Trastevere",
+      "description": "Отель Horti 14 Borgo Trastevere расположен в центре Рима, в 10 минутах ходьбы от центра оживленного района Трастевере. На территории 4-звездочного отеля разбит сад и работает ресторан и бар.\r\n\r\nВсе полностью оборудованные номера отеля Horti 14 Borgo Trastevere оформлены в современном стиле и оснащены кондиционером, мини-баром и телевизором с плоским экраном и каналами сети Sky. В числе удобств бесплатный Wi-Fi. Во всех номерах предоставляются тапочки и халаты.",
+      "category": 4,
+      "is_repair": true,
+      "logo": "hotels/list/s1200_8CtODgx.jpg",
+      "service": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 3,
+    "fields": {
+      "city": 50,
+      "country": 2,
+      "title": "Рэдиссон Блу Олимпийский",
+      "description": "Отель Radisson Blu Olympiyskiy с потрясающим видом на столицу расположен в тихом месте в центре города, рядом с проспектом Мира.\r\n\r\nК услугам гостей отеля Radisson Blu современные номера и люксы с панорамным видом на городской пейзаж Москвы. В номерах предоставляются принадлежности для чая/кофе, в них можно воспользоваться высокоскоростным Wi-Fi.",
+      "category": 5,
+      "is_repair": true,
+      "logo": "hotels/list/s1200_4Al9ffW.jpg",
+      "service": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 4,
+    "fields": {
+      "city": 3,
+      "country": 3,
+      "title": "Camden Enterprise Hotel",
+      "description": "Отель Camden Enterprise расположен в викторианском здании, построенном в 1865 году, в лондонском районе Камден, рядом со станцией метро Chalk Farm и в 10 минутах ходьбы от рынка Камден и канала Риджентс. К услугам гостей бар.\r\n\r\nВ числе удобств номеров широкоэкранный телевизор, транслирующий кабельные каналы, принадлежности для чая/кофе, а также собственная ванная комната с душем и бесплатными туалетно-косметическими принадлежностями. В некоторых номерах есть потолочное или французское окно с видом на город. На всей территории отеля Camden Enterprise работает бесплатный Wi-Fi.",
+      "category": 4,
+      "is_repair": false,
+      "logo": "hotels/list/s1200_ISLbVSy.jpg",
+      "service": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        11
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 13,
+    "fields": {
+      "city": 17,
+      "country": 2,
+      "title": "Арт Деко Невский",
+      "description": "<p>Отель «РА» находится около автобусной остановки и небольших парков. <br>\r\nК услугам гостей доступные номера с бесплатным WiFi.<br></p>\r\nРасположение отеля <span class=\"text-primary\">«РА Тамбовская 11» </span><br>идеально подходит для гостей, желающих осмотреть Санкт-Петербург. До Московского вокзала - несколько минут на автомобиле.\r\nЭто любимая часть города Санкт-Петербург среди наших гостей согласно независимым отзывам.\r\nПарам особенно нравится расположение — они оценили проживание в этом районе для поездки вдвоем на <b>8,8</b>.",
+      "category": 3,
+      "is_repair": true,
+      "logo": "hotels/list/185999851.jpg",
+      "service": [
+        2,
+        3,
+        5,
+        6,
+        10
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 17,
+    "fields": {
+      "city": 25,
+      "country": 2,
+      "title": "Hotel Times",
+      "description": "Отель Times расположен в Самаре, в 18 км от стадиона «Самара Арена».<br> К услугам гостей номера с кондиционером. В каждом номере обустроена <b>собственная ванная комната</b> и установлен телевизор с плоским экраном и спутниковыми каналами.<br>В числе удобств круглосуточная стойка регистрации и бесплатный Wi-Fi.",
+      "category": 2,
+      "is_repair": false,
+      "logo": "hotels/list/162174167.jpg",
+      "service": [
+        1,
+        2,
+        4,
+        6,
+        10
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 18,
+    "fields": {
+      "city": 43,
+      "country": 1,
+      "title": "Napolart",
+      "description": "Отель типа <b>«постель и завтрак»</b> Napolart расположен в историческом центре Неаполя, всего в 700 м от площади <b>Пьяцца-дель-Плебишито</b> и в 140 м от станции метро <b>Municipio</b>. Номера выходят на балкон с видом на город. На всей территории действует бесплатный Wi-Fi.",
+      "category": 5,
+      "is_repair": false,
+      "logo": "hotels/list/29395854.jpg",
+      "service": [
+        1,
+        2,
+        3,
+        7,
+        10,
+        11
+      ]
+    }
+  },
+  {
+    "model": "hotels.hotel",
+    "pk": 20,
+    "fields": {
+      "city": 48,
+      "country": 2,
+      "title": "Венец",
+      "description": "Отель расположен в центре города. Прекрасный вид на Волгу. Круглосуточное обслуживание номеров. Экскурсии по городу и окрестностям.",
+      "category": 3,
+      "is_repair": false,
+      "logo": "",
+      "service": [
+        1,
+        2,
+        6,
+        10
+      ]
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 1,
+    "fields": {
+      "hotel": 1,
+      "price": 1500.0,
+      "category": "комфорт",
+      "description": "Стандартный двухместный номер с 1 кроватью",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 2,
+    "fields": {
+      "hotel": 1,
+      "price": 2500.0,
+      "category": "полулюкс",
+      "description": "Улучшенный двухместный номер с 1 кроватью или 2 отдельными кроватями",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 3,
+    "fields": {
+      "hotel": 2,
+      "price": 2500.0,
+      "category": "полулюкс",
+      "description": "Улучшенный двухместный номер с 1 кроватью или 2 отдельными кроватями и видом на сад",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 4,
+    "fields": {
+      "hotel": 2,
+      "price": 3000.0,
+      "category": "люкс",
+      "description": "Двухместный номер Делюкс с 1 кроватью или 2 отдельными кроватями, вид на сад",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 5,
+    "fields": {
+      "hotel": 3,
+      "price": 3500.0,
+      "category": "люкс",
+      "description": "2 односпальные кровати  или 1 очень большая двуспальная кровать",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 6,
+    "fields": {
+      "hotel": 3,
+      "price": 1500.0,
+      "category": "эконом",
+      "description": "Стандартный номер с видом на город",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 7,
+    "fields": {
+      "hotel": 3,
+      "price": 2500.0,
+      "category": "полулюкс",
+      "description": "Двухместный номер Премиум с 2 отдельными кроватями и видом на город\r\n Высокий этаж\r\n2 односпальные кровати",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 8,
+    "fields": {
+      "hotel": 4,
+      "price": 2000.0,
+      "category": "полулюкс",
+      "description": "!!!!Двухместный номер Делюкс с 1 кроватью или 2 отдельными кроватями\r\n1 большая двуспальная кровать  или 2 односпальные кровати",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 9,
+    "fields": {
+      "hotel": 4,
+      "price": 1500.0,
+      "category": "эконом",
+      "description": "Улучшенный номер-студио\r\n1 двуспальная кровать  и 1 диван-кровать",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 10,
+    "fields": {
+      "hotel": 4,
+      "price": 1000.0,
+      "category": "эконом",
+      "description": "Улучшенный двухместный номер с 1 кроватью\r\n1 большая двуспальная кровать",
+      "logo": "",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 19,
+    "fields": {
+      "hotel": 13,
+      "price": 2200.0,
+      "category": "комфорт",
+      "description": "Светлый номер с телевизором, холодильником и письменным столом. В собственной ванной комнате номера есть фен. +++",
+      "logo": "rooms/list/185998210.jpg",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 96,
+    "fields": {
+      "hotel": 13,
+      "price": 1800.8,
+      "category": "полулюкс",
+      "description": "Светлый номер с телевизором, холодильником и письменным столом. В собственной ванной комнате номера есть фен.\r\n\r\nЭто более просторный номер.",
+      "logo": "rooms/list/6528381.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 97,
+    "fields": {
+      "hotel": 13,
+      "price": 1350.55,
+      "category": "эконом",
+      "description": "Светлый номер с телевизором и холодильником.",
+      "logo": "rooms/list/16977990.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 107,
+    "fields": {
+      "hotel": 17,
+      "price": 1440.0,
+      "category": "комфорт",
+      "description": "1 большая двуспальная кровать \r\nДвухместный номер с 1 кроватью, кондиционером и электрическим чайником.",
+      "logo": "rooms/list/162174354.jpg",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 108,
+    "fields": {
+      "hotel": 17,
+      "price": 1500.56,
+      "category": "люкс",
+      "description": "2 дивана-кровати \r\nЛюкс с кондиционером и электрическим чайником.",
+      "logo": "rooms/list/162678160.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 109,
+    "fields": {
+      "hotel": 18,
+      "price": 8201.0,
+      "category": "полулюкс",
+      "description": "1 большая двуспальная кровать \r\nДвухместный номер с 1 кроватью, кондиционером, мини-баром и спутниковым телевидением.",
+      "logo": "rooms/list/86870318.jpg",
+      "is_booking": true
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 110,
+    "fields": {
+      "hotel": 18,
+      "price": 8978.0,
+      "category": "люкс",
+      "description": "Номер с балконом с видом на город, кондиционером, с современным декором, спутниковым телевидением и мини-баром. В собственной ванной комнате можно пользоваться феном и бесплатными туалетно-косметическими принадлежностями.",
+      "logo": "rooms/list/29395837.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 111,
+    "fields": {
+      "hotel": 18,
+      "price": 11963.0,
+      "category": "люкс",
+      "description": "1 очень большая двуспальная кровать  и 1 диван-кровать \r\nНомер с балконом с видом на город, кондиционером, современным декором, спутниковым телевидением, диваном-кроватью и мини-баром. В собственной ванной комнате можно пользоваться феном и бесплатными туалетно-косметическими принадлежностями.",
+      "logo": "rooms/list/57938547.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 112,
+    "fields": {
+      "hotel": 1,
+      "price": 1777.0,
+      "category": "эконом",
+      "description": "Стандартный номер с видом на город",
+      "logo": "rooms/list/room3_1qEYmI4.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 113,
+    "fields": {
+      "hotel": 20,
+      "price": 2000.0,
+      "category": "люкс",
+      "description": "1 очень большая двуспальная кровать и 1 диван-кровать Номер с балконом с видом на город, кондиционером, современным декором, спутниковым телевидением, диваном-кроватью и мини-баром. В собственной ванной комнате можно пользоваться феном и бесплатными туалетно-косметическими принадлежностями.",
+      "logo": "rooms/list/list2.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 114,
+    "fields": {
+      "hotel": 20,
+      "price": 111.0,
+      "category": "комфорт",
+      "description": "1 большая двуспальная кровать Двухместный номер с 1 кроватью, кондиционером и электрическим чайником.",
+      "logo": "rooms/list/162677768.jpg",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 115,
+    "fields": {
+      "hotel": 20,
+      "price": 333.0,
+      "category": "комфорт",
+      "description": "Светлый номер с телевизором, холодильником и письменным столом. В собственной ванной комнате номера есть фен.",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 116,
+    "fields": {
+      "hotel": 20,
+      "price": 1333.0,
+      "category": "комфорт",
+      "description": "Стандартный двухместный номер с 1 кроватью",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 117,
+    "fields": {
+      "hotel": 20,
+      "price": 1555.0,
+      "category": "полулюкс",
+      "description": "Улучшенный двухместный номер с 1 кроватью или 2 отдельными кроватями и видом на сад",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.room",
+    "pk": 118,
+    "fields": {
+      "hotel": 20,
+      "price": 2444.0,
+      "category": "люкс",
+      "description": "2 односпальные кровати или 1 очень большая двуспальная кровать",
+      "logo": "",
+      "is_booking": false
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 4,
+    "fields": {
+      "user": 1,
+      "hotel": 2,
+      "rate": 4,
+      "text": "Все устроило, быстро и удобно.",
+      "created": "2021-08-14",
+      "updated": "2021-10-11T12:39:30.786Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 6,
+    "fields": {
+      "user": 1,
+      "hotel": 13,
+      "rate": 4,
+      "text": "Все было хорошо.",
+      "created": "2021-09-08",
+      "updated": "2021-10-11T12:39:06.710Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 7,
+    "fields": {
+      "user": 1,
+      "hotel": 2,
+      "rate": 1,
+      "text": "Отвратительное обслуживание.",
+      "created": "2021-09-21",
+      "updated": "2021-10-11T12:38:46.159Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 8,
+    "fields": {
+      "user": 1,
+      "hotel": 1,
+      "rate": 5,
+      "text": "Все устроило.",
+      "created": "2021-09-24",
+      "updated": "2021-10-11T12:38:24.675Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 9,
+    "fields": {
+      "user": 4,
+      "hotel": 18,
+      "rate": 3,
+      "text": "Очень дорого и неудобно.",
+      "created": "2021-10-03",
+      "updated": "2021-10-11T12:38:06.172Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 11,
+    "fields": {
+      "user": 2,
+      "hotel": 13,
+      "rate": 4,
+      "text": "Номера замечательные, но дорогие.",
+      "created": "2021-10-06",
+      "updated": "2021-10-11T12:37:41.755Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 12,
+    "fields": {
+      "user": 2,
+      "hotel": 4,
+      "rate": 5,
+      "text": "Очень все понравилось.",
+      "created": "2021-10-06",
+      "updated": "2021-10-11T12:37:03.159Z"
+    }
+  },
+  {
+    "model": "hotels.review",
+    "pk": 13,
+    "fields": {
+      "user": 1,
+      "hotel": 17,
+      "rate": 4,
+      "text": "Отличный отель!",
+      "created": "2021-10-07",
+      "updated": "2021-10-06T22:10:54.243Z"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "room": 4,
+      "date_start": "2021-08-04",
+      "date_end": "2021-08-04"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "room": 3,
+      "date_start": "2021-08-04",
+      "date_end": "2021-09-04"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 35,
+    "fields": {
+      "user": 1,
+      "room": 109,
+      "date_start": "2021-09-01",
+      "date_end": "2021-10-01"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 37,
+    "fields": {
+      "user": 2,
+      "room": 19,
+      "date_start": "2021-10-03",
+      "date_end": "2021-10-31"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 38,
+    "fields": {
+      "user": 2,
+      "room": 10,
+      "date_start": "2021-10-27",
+      "date_end": "2021-10-31"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 39,
+    "fields": {
+      "user": 2,
+      "room": 9,
+      "date_start": "2021-10-27",
+      "date_end": "2021-10-31"
+    }
+  },
+  {
+    "model": "hotels.booking",
+    "pk": 41,
+    "fields": {
+      "user": 1,
+      "room": 107,
+      "date_start": "2021-10-10",
+      "date_end": "2021-10-31"
+    }
+  }
+]
