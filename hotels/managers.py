@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import Count
+from django.db.models import Count, Max
 from django.db.models.functions import Coalesce
 
 
@@ -9,9 +9,10 @@ class EventQuerySet(models.QuerySet):
         return self.annotate(
             count_rooms=Coalesce(models.Count('rooms'), 0),
             sum_rate=Coalesce(models.Sum('reviews__rate'), 0),
-            c_rate=Coalesce(models.Count('reviews'), 1),
+            c_rate=Coalesce(5, models.Count('reviews'), 1),
             count_reviews=Count('reviews__rate'),
             new_rate=models.F('sum_rate') * 10 / models.F('c_rate') * 0.1,
+
         )
 
     def EvQuSet(self):
