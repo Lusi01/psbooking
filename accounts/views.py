@@ -132,7 +132,7 @@ class BookingView(MyPermissionRequiredMixin, ListView):
 
 
 class DashboardView(MyPermissionRequiredMixin, ListView):
-    permission_required = 'hotels.view_favorite'
+    permission_required = 'hotels.view_city'
     permission_denied_message = '403 Forbidden - недостаточно прав для перехода на страницу '
     model = Hotel
     template_name = 'accounts/dashboard.html'
