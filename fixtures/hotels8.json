@@ -58,7 +58,7 @@
       "city": 25,
       "role": 2
     }
-  }
+  },
   {
     "model": "hotels.country",
     "pk": 1,
