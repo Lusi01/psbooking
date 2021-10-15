@@ -28,7 +28,7 @@ class Profile(models.Model):
 
     @property
     def avatar_url(self):
-        return self.avatar.url if self.avatar else f'{settings.STATIC_URL}images/reviewer/1.jpg'
+        return self.avatar.url if self.avatar else f'{settings.STATIC_URL}images/accounts/1.jpg'
 
     @property
     def get_login(self):
