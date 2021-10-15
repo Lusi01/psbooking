@@ -102,8 +102,11 @@ class Hotel(models.Model):
 
     @property
     def new_rate(self):
-        sum_rate =sum(list(self.reviews.values_list('rate', flat=True)))
-        new_rate = (sum_rate * 10 / self.display_reviews_count) * 0.1
+        sum_rate =sum(list(self.reviews.values_list('rate', flat=True)), start=0)
+        if self.display_reviews_count > 0:
+            new_rate = (sum_rate * 10 / self.display_reviews_count) * 0.1
+        else:
+            new_rate = sum_rate
         return new_rate
 
     @property
