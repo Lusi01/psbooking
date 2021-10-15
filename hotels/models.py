@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Sum
 from django.urls import reverse
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -98,6 +99,12 @@ class Hotel(models.Model):
     def display_reviews_count(self):
         reviews_count = self.reviews.values_list('rate', flat=True).count()
         return reviews_count
+
+    @property
+    def new_rate(self):
+        sum_rate =sum(list(self.reviews.values_list('rate', flat=True)))
+        new_rate = (sum_rate * 10 / self.display_reviews_count) * 0.1
+        return new_rate
 
     @property
     def display_booking_count(self):
