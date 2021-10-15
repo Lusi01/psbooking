@@ -9,7 +9,7 @@ from hotels.models import Country, City
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    avatar = models.FileField(null=True, blank=True, upload_to="accounts/profiles/avatar", validators=[
+    avatar = models.FileField(null=True, blank=True, upload_to="accounts/list", validators=[
         FileExtensionValidator(['jpg', 'png', 'gif', 'svg'])])
     phone = models.CharField(max_length=20, null=True, blank=True)
     country = models.ForeignKey(Country, null=True, on_delete=models.CASCADE, related_name='users')
@@ -28,7 +28,7 @@ class Profile(models.Model):
 
     @property
     def avatar_url(self):
-        return self.avatar.url if self.avatar else f'{settings.STATIC_URL}images/accounts/profiles/1.jpg'
+        return self.avatar.url if self.avatar else f'{settings.STATIC_URL}images/accounts/1.jpg'
 
     @property
     def get_login(self):
