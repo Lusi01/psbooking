@@ -5,6 +5,7 @@ from .settings_base import *
 
 
 DEBUG = False
+ALLOWED_HOSTS = ['34.88.24.61', 'localhost']
 
 DATABASES = {
     'default': {
