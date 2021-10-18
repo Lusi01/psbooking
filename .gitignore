@@ -24,8 +24,8 @@ copyes/
 ## <django-project-name>/staticfiles/
 # psbooking/staticfiles/
 ## staticfiles
-## static
-assets/
+static/
+# assets/
 
 ### Django.Python Stack ###
 # Byte-compiled / optimized / DLL files
