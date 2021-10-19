@@ -40,9 +40,12 @@ environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # для DEBUG:
-DEBUG = True
 BASE_DIR = Path(__file__).resolve().parent.parent
+DEBUG = True
 ALLOWED_HOSTS = []
+
+# DEBUG = False
+# ALLOWED_HOSTS = ['127.0.0.1']
 
 # # Для Product
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -139,6 +142,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                #'django.template.context_processors.media',
             ],
             'libraries': {
                     'psbookingtags': 'templatetags.psbookingtags',
@@ -147,6 +152,10 @@ TEMPLATES = [
         },
     },
 ]
+
+# TEMPLATE_CONTEXT_PROCESSORS = (
+#     'django.core.context_processors.media',
+# )
 
 WSGI_APPLICATION = 'psbooking.wsgi.application'
 
@@ -218,7 +227,7 @@ DECIMAL_SEPARATOR = '.'
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 # эта настройка для production!
-STATIC_ROOT = BASE_DIR / 'static' #os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = BASE_DIR / 'static' #os.path.join(BASE_DIR, 'static')
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/' #префикс URL адреса статического файла
@@ -232,8 +241,8 @@ STATICFILES_DIRS = [
 ]
 
 # Настройка MEDIA файлов
-#MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = BASE_DIR / 'media'
+#MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
 # Default primary key field type
