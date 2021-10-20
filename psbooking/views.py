@@ -6,5 +6,8 @@ def page_not_found_view(request, exception):
 
 
 def server_error_view(request, *args, **argv):
-    return render(request, 'error_page.html', status=500)
+    return render(request, 'error_page500.html', status=500)
 
+
+def error_404(request):
+    return render(request, 'error_page.html', status=200)

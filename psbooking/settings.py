@@ -6,6 +6,9 @@ from .settings_base import *
 
 DEBUG = False
 ALLOWED_HOSTS = ['34.88.24.61', 'localhost']
+SITE_ID = 2
+SOCIAL_AUTH_VK_OAUTH2_KEY = env('VK_APP_ID')
+SOCIAL_AUTH_VK_OAUTH2_SECRET = env('VK_API_SECRET')
 
 DATABASES = {
     'default': {

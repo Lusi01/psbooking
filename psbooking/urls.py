@@ -19,6 +19,8 @@ from django.urls import path
 from django.conf import settings
 from django.urls import include
 
+from . import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +31,9 @@ urlpatterns += [
     path('hotels/', include('hotels.urls')),
     path('accounts/', include('accounts.urls')),
     path('allauth/accounts/', include('allauth.urls')),
+    # для проверки!
+    path('error404/', views.error_404, name='error404'),
+    path('error500/', views.error_404, name='error500'),
 ]
 
 handler404 = "psbooking.views.page_not_found_view"

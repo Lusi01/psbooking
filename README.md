@@ -3,9 +3,7 @@
 
 **Ссылки**:
 - [Github](https://github.com/Lusi01/psbooking.git)
-- [Heroku](https://mighty-fortress-00708.herokuapp.com)
-- [Heroku](https://git.heroku.com/mighty-fortress-00708.git)
-- [Сайт](https://github.com/Lusi01/psbooking.git)
+- [Сайт](http://http://34.88.24.61)
 
 
 ### Описание проекта:

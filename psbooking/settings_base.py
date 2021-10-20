@@ -77,6 +77,10 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 SITE_ID = 2  #1  #https://www.youtube.com/watch?v=kBNUGLVJoOo
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
+SOCIAL_AUTH_VK_OAUTH2_KEY = env('VK_APP_ID')
+SOCIAL_AUTH_VK_OAUTH2_SECRET = env('VK_API_SECRET')
+
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
@@ -100,7 +104,10 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.vk', #https://habr.com/ru/sandbox/48565/
+    'allauth.socialaccount.providers.vk', # https://habr.com/ru/sandbox/48565/
+    # Описание: https://vivazzi.pro/it/auth-vk/
+    # Настройки приложения: https://vk.com/apps?act=manage
+
 
     # 'debug_toolbar',
 
